@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "lib": ["esnext", "dom"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@composables/*": ["src/composables/*"],
+            "@domain/*": ["src/domain/*"],
+            "@infrastructure/*": ["src/infrastructure/*"],
+            "@presentation/*": ["src/presentation/*"],
+            "@store/*": ["src/store/*"],
+            "@utils/*": ["src/utils/*"],
+            "@assets/*": ["src/assets/*"],
+            "@config/*": ["src/config/*"],
+            "@type/*": ["src/types/*"],
+            "@services/*": ["src/services/*"]
+        },
+        "typeRoots": ["src/types", "node_modules/@types"],   
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "noUncheckedIndexedAccess": true,
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "src/**/__tests__/**/*.ts"
+    ],
+    "exclude": []
+}
