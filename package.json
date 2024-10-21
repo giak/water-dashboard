@@ -9,8 +9,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "lint": "biome check .",
-    "format": "biome format .",
-    "prepare": "husky install"
+    "format": "biome format ."
   },
   "dependencies": {
     "@primevue/themes": "^4.1.1",
@@ -19,16 +18,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@commitlint/cz-commitlint": "^19.5.0",
     "@eslint/js": "^9.13.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "commitizen": "^4.3.1",
     "eslint": "^9.13.0",
     "eslint-plugin-vue": "^9.29.0",
     "globals": "^15.11.0",
-    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "start-server-and-test": "^2.0.8",
     "typescript": "^5.6.3",
@@ -37,15 +32,5 @@
     "vite-plugin-checker": "^0.8.0",
     "vitest": "^2.1.3",
     "vue-tsc": "^2.1.6"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": [
-      "biome check --apply"
-    ]
   }
 }

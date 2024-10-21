@@ -1,8 +1,8 @@
 # Utiliser une image de base plus légère et spécifique à Node.js
-FROM node:20-alpine AS deps
+FROM node:22-alpine AS deps
 
 # Utiliser PNPM_VERSION pour faciliter les mises à jour
-ARG PNPM_VERSION=8.15.1
+ARG PNPM_VERSION=9.12.2
 RUN npm install -g pnpm@$PNPM_VERSION
 
 # Définir le répertoire de travail
@@ -13,14 +13,15 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
+RUN npm install -g pnpm@$PNPM_VERSION
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm build
 
 # Production stage
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV production
 COPY --from=builder /app/dist ./dist

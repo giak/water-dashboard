@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
         "composite": true,
         "lib": ["esnext", "dom"],
@@ -22,6 +23,7 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "strict": true,
+        "allowJs": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
@@ -33,8 +35,7 @@
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
-        "src/**/*.vue",
-        "src/**/__tests__/**/*.ts"
+        "src/**/*.vue"
     ],
     "exclude": []
 }
